@@ -20,6 +20,7 @@ public class EnviaMensagemParaOTopico {
 		
 		try(JMSContext context = factory.createContext("jms", "jms2")) {
 			JMSProducer producer = context.createProducer();
+			producer.setProperty("formato", "ebook");
 			
 			Scanner scanner = new Scanner(System.in);
 			while(scanner.hasNextLine()) {
